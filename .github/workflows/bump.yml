@@ -1,0 +1,17 @@
+name: Bump Cask
+
+on:
+  - workflow_dispatch
+
+jobs:
+  bump-casks:
+    runs-on: macos-latest
+    steps:
+      - name: Update Homebrew cask
+        uses: macauley/action-homebrew-bump-cask@v1.0.0
+        with:
+          # Required, custom GitHub access token with only the 'public_repo' scope enabled
+          token: ${{secrets.TOKEN}}
+          org: vrcx-team
+          tap: vrcx-team/homebrew-vrcx-tap
+          livecheck: true
