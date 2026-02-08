@@ -1,4 +1,4 @@
-cask "vrcx" do
+cask "vrcx@nightly" do
   arch arm: "arm64", intel: "x64"
 
   version "2026-02-05T05.35-29494c3"
