@@ -20,6 +20,11 @@ cask "vrcx" do
 
   app "VRCX.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/VRCX.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/VRCX",
     "~/Library/Preferences/app.vrcx.plist",
