@@ -12,6 +12,7 @@ jobs:
         with:
           # Required, custom GitHub access token with only the 'public_repo' scope enabled
           token: ${{secrets.TOKEN}}
+          cask: vrcx, vrcx@nightly
           org: vrcx-team
           tap: vrcx-team/homebrew-vrcx-tap
           livecheck: true
