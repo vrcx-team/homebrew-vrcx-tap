@@ -12,8 +12,10 @@ cask "vrcx" do
   homepage "https://vrcx.app/"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https://api0.vrcx.app/releases/stable/latest"
+    strategy :json do |json|
+      json["tag_name"]&.sub(/^v/, "")
+    end
   end
 
   depends_on macos: ">= :monterey"

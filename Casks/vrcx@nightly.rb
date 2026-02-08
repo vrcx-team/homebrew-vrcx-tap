@@ -12,13 +12,20 @@ cask "vrcx@nightly" do
   homepage "https://vrcx.app/"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https://api0.vrcx.app/releases/nightly/latest"
+    strategy :json do |json|
+      json["tag_name"]&.sub(/^v/, "")
+    end
   end
 
   depends_on macos: ">= :monterey"
 
   app "VRCX.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/VRCX.app"]
+  end
 
   zap trash: [
     "~/Library/Application Support/VRCX",
