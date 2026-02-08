@@ -21,5 +21,5 @@ jobs:
         token: ${{ secrets.TOKEN }}
         merge-method: rebase
         pull-request: ${{ github.event.inputs.pull-request }}
-        pull-request-author-associations: "OWNER, COLLABORATOR, MEMBER"
+        pull-request-author-associations: MEMBER,OWNER
         dry-run: false
