@@ -17,6 +17,7 @@ jobs:
 
   automerge:
     runs-on: ubuntu-latest
+    needs: [bump-casks]
     steps:
     - uses: reitermarkus/automerge@v2
       with:
