@@ -14,3 +14,14 @@ jobs:
           token: ${{secrets.TOKEN}}
           tap: vrcx-team/homebrew-vrcx-tap
           livecheck: true
+
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: reitermarkus/automerge@v2
+      with:
+        token: ${{ secrets.TOKEN }}
+        merge-method: rebase
+        pull-request: ${{ github.event.inputs.pull-request }}
+        pull-request-author-associations: MEMBER,OWNER
+        dry-run: false
