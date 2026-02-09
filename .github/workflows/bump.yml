@@ -23,6 +23,5 @@ jobs:
       with:
         token: ${{ secrets.TOKEN }}
         merge-method: rebase
-        pull-request: ${{ github.event.inputs.pull-request }}
         pull-request-author-associations: MEMBER,OWNER
         dry-run: false
