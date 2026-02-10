@@ -12,7 +12,7 @@ cask "vrcx" do
   homepage "https://vrcx.app/"
 
   livecheck do
-    url "https://api0.vrcx.app/releases/stable/latest"
+    url "https://api.github.com/repos/vrcx-team/vrcx/releases/latest"
     strategy :json do |json|
       json["tag_name"]&.sub(/^v/, "")
     end
