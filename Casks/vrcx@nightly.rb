@@ -22,8 +22,8 @@ cask "vrcx@nightly" do
   app "VRCX.app"
 
   postflight_steps do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/VRCX.app"]
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "#{appdir}/VRCX.app"]
   end
 
   zap trash: [
