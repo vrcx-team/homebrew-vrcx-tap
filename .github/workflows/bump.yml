@@ -7,13 +7,18 @@ jobs:
   bump-casks:
     runs-on: macos-latest
     steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+        with:
+          token: ${{ secrets.TOKEN }}
+
       - name: Update Homebrew cask
         uses: Homebrew/actions/bump-packages@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
         with:
-          token: ${{secrets.TOKEN}}
+          token: ${{ secrets.TOKEN }}
           casks: >
-            vrcx-team/homebrew-vrcx-tap/vrcx
-            vrcx-team/homebrew-vrcx-tap/vrcx@nightly
+            vrcx-team/vrcx-tap/vrcx
+            vrcx-team/vrcx-tap/vrcx@nightly
           fork: false
 
   automerge:
