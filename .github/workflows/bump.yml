@@ -8,20 +8,21 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Update Homebrew cask
-        uses: eugenesvk/action-homebrew-bump-cask@3.8.6
+        uses: Homebrew/actions/bump-packages@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
         with:
-          # Required, custom GitHub access token with only the 'public_repo' scope enabled
           token: ${{secrets.TOKEN}}
-          tap: vrcx-team/homebrew-vrcx-tap
-          livecheck: true
+          casks: >
+            vrcx-team/vrcx-tap/vrcx
+            vrcx-team/vrcx-tap/vrcx@nightly
+          fork: false
 
   automerge:
     runs-on: ubuntu-latest
     needs: [bump-casks]
     steps:
-    - uses: reitermarkus/automerge@v2
-      with:
-        token: ${{ secrets.TOKEN }}
-        merge-method: rebase
-        pull-request-author-associations: MEMBER,OWNER
-        dry-run: false
+      - uses: reitermarkus/automerge@v2
+        with:
+          token: ${{ secrets.TOKEN }}
+          merge-method: rebase
+          pull-request-author-associations: MEMBER,OWNER
+          dry-run: false
