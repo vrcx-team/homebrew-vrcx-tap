@@ -21,7 +21,7 @@ cask "vrcx" do
 
   app "VRCX.app"
 
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/VRCX.app"]
   end
