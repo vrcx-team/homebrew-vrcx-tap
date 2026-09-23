@@ -5,8 +5,7 @@ cask "vrcx@nightly" do
   sha256 arm:   "14aa50ed5fb3d65ebbbd4bbd79fa945ca927fe2a3466e97cb4aef37b84f54c67",
          intel: "2bb2f8c2ab0299dc42819346013ae8b6aff6cd4cc2904ac9cd5d6f08b850bdf6"
 
-  url "https://github.com/Natsumi-sama/VRCX/releases/download/#{version}/VRCX_#{version}_#{arch}.dmg",
-      verified: "github.com/Natsumi-sama/VRCX/"
+  url "https://github.com/Natsumi-sama/VRCX/releases/download/#{version}/VRCX_#{version}_#{arch}.dmg"
   name "VRCX"
   desc "VRChat companion app"
   homepage "https://vrcx.app/"
