@@ -17,7 +17,7 @@ cask "vrcx@nightly" do
     end
   end
 
-  depends_on macos: :monterey
+  depends_on macos: :sonoma
 
   app "VRCX.app"
 
