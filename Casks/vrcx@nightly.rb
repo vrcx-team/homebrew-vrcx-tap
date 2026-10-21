@@ -11,9 +11,9 @@ cask "vrcx@nightly" do
   homepage "https://vrcx.app/"
 
   livecheck do
-    url "https://api.github.com/repos/natsumi-sama/vrcx/releases/latest"
-    strategy :json do |json|
-      json["tag_name"]&.sub(/^v/, "")
+    url :url
+    strategy :github_latest do |json, _regex|
+      json["tag_name"]
     end
   end
 
