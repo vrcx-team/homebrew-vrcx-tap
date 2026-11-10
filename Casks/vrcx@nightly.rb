@@ -1,9 +1,9 @@
 cask "vrcx@nightly" do
   arch arm: "arm64", intel: "x64"
 
-  version "2026-11-07T16.36-4a63d57"
-  sha256 arm:   "d904989bffc95b537512df64afc91e20888244ba022a737fd8c4cd03153b4078",
-         intel: "25d398a73722dcf47451f83d9c01b42c4b67e7383299537292e72cc60a860e2e"
+  version "2026-11-10T11.23-ab378a0"
+  sha256 arm:   "9ddb16e3de56ed2d00bc3661f57a6c00effe75f79a0f9ca5569a573cd6b979a4",
+         intel: "08f30ea0e099a8fc8fa1f94c0883ab6f3e252fa559459f0655c3cdcd28911bc4"
 
   url "https://github.com/Natsumi-sama/VRCX/releases/download/#{version}/VRCX_#{version}_#{arch}.dmg"
   name "VRCX"
